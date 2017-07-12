@@ -25,24 +25,28 @@ function getDefaultModules() {
     ],
     loaders: [
       {
+        test: /\.styl/,
+        loader: 'style-loader!css-loader!postcss-loader!stylus-loader'
+      },
+      {
+        test: /\.json$/,
+        loader:'json-loader'
+      },
+      {
         test: /\.css$/,
         loader: 'style-loader!css-loader'
       },
-      {
-        test: /\.sass/,
-        loader: 'style-loader!css-loader!sass-loader?outputStyle=expanded&indentedSyntax'
-      },
+      // {
+      //   test: /\.sass/,
+      //   loader: 'style-loader!css-loader!sass-loader?outputStyle=expanded&indentedSyntax'
+      // },
       {
         test: /\.scss/,
-        loader: 'style-loader!css-loader!sass-loader?outputStyle=expanded'
+        loader: 'style-loader!css-loader'
       },
       {
         test: /\.less/,
         loader: 'style-loader!css-loader!less-loader'
-      },
-      {
-        test: /\.styl/,
-        loader: 'style-loader!css-loader!stylus-loader'
       },
       {
         test: /\.(png|jpg|gif|woff|woff2)$/,
